@@ -1,0 +1,899 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Farmacia Salud Vida</title>
+
+    <!-- Iconos reales -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f8fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            background: linear-gradient(135deg, #168aad, #126782);
+            color: white;
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        header .logo-icon {
+            font-size: 42px;
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            margin-bottom: 6px;
+            font-size: 32px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        /* MENU */
+
+        nav {
+            background-color: #0e5870;
+            padding: 13px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #bdeff7;
+        }
+
+        /* SECCIONES */
+
+        section {
+            padding: 55px 8%;
+            background-color: white;
+            margin-top: 10px;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #168aad;
+            margin-bottom: 15px;
+            font-size: 29px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 35px;
+            color: #666;
+        }
+
+        /* INICIO */
+
+        .inicio {
+            min-height: 470px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(255,255,255,.88),
+                    rgba(255,255,255,.88)
+                ),
+                url("https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+        }
+
+        .inicio-contenido {
+            max-width: 850px;
+        }
+
+        .inicio h2 {
+            color: #126782;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .inicio p {
+            font-size: 19px;
+            margin-bottom: 25px;
+        }
+
+        .boton {
+            display: inline-block;
+            background-color: #168aad;
+            color: white;
+            padding: 13px 25px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .boton:hover {
+            background-color: #126782;
+        }
+
+        /* NOSOTROS */
+
+        .nosotros-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .nosotros-grid img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .texto-nosotros {
+            text-align: left;
+        }
+
+        .texto-nosotros p {
+            margin-bottom: 15px;
+        }
+
+        /* CONTENIDO */
+
+        .contenido-principal {
+            background-color: #f4f8fa;
+        }
+
+        .contenido-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .contenido-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0,0,0,.08);
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .contenido-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,.12);
+        }
+
+        .contenido-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .contenido-card-body {
+            padding: 22px;
+        }
+
+        .icono {
+            color: #168aad;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .contenido-card h3 {
+            color: #126782;
+            margin-bottom: 8px;
+        }
+
+        .contenido-card p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        /* DATOS DESTACADOS */
+
+        .destacados {
+            max-width: 1150px;
+            margin: 35px auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .dato {
+            background-color: white;
+            border-left: 4px solid #168aad;
+            padding: 22px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,.06);
+        }
+
+        .dato i {
+            font-size: 25px;
+            color: #168aad;
+            margin-bottom: 10px;
+        }
+
+        .dato h3 {
+            color: #126782;
+            margin-bottom: 6px;
+        }
+
+        /* SERVICIOS */
+
+        .servicios {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .servicio {
+            width: 250px;
+            padding: 28px 22px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #fafafa;
+        }
+
+        .servicio i {
+            font-size: 32px;
+            color: #168aad;
+            margin-bottom: 13px;
+        }
+
+        .servicio h3 {
+            color: #168aad;
+            margin-bottom: 10px;
+        }
+
+        /* EMPRESA */
+
+        .empresa {
+            max-width: 850px;
+            margin: auto;
+            background-color: #f7fbfc;
+            padding: 28px;
+            border-radius: 10px;
+            border-left: 5px solid #168aad;
+        }
+
+        .empresa p {
+            margin-bottom: 10px;
+        }
+
+        /* CONTACTO */
+
+        .contacto {
+            text-align: center;
+            line-height: 2;
+        }
+
+        .contacto i {
+            color: #168aad;
+            width: 25px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #126782;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 10px;
+        }
+
+        .footer-icons {
+            margin-top: 10px;
+        }
+
+        .footer-icons i {
+            margin: 0 8px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .contenido-grid,
+            .destacados {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nosotros-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav a {
+                display: inline-block;
+                margin: 7px 5px;
+                font-size: 13px;
+            }
+
+            .inicio h2 {
+                font-size: 29px;
+            }
+
+            section {
+                padding: 40px 5%;
+            }
+
+            .contenido-grid,
+            .destacados {
+                grid-template-columns: 1fr;
+            }
+
+            .nosotros-grid img {
+                height: 250px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-house-medical"></i>
+        </div>
+
+        <h1>Farmacia Salud Vida</h1>
+
+        <p>Tu salud es nuestra prioridad</p>
+
+    </header>
+
+
+    <!-- MENU -->
+
+    <nav>
+
+        <a href="#inicio">Inicio</a>
+
+        <a href="#nosotros">Nosotros</a>
+
+        <a href="#contenido">Contenido</a>
+
+        <a href="#servicios">Servicios</a>
+
+        <a href="#empresa">Tipo Empresarial</a>
+
+        <a href="#contacto">Contacto</a>
+
+    </nav>
+
+
+    <!-- INICIO -->
+
+    <section class="inicio" id="inicio">
+
+        <div class="inicio-contenido">
+
+            <h2>Bienvenidos a Farmacia Salud Vida</h2>
+
+            <p>
+                Ofrecemos productos farmacéuticos, artículos de higiene
+                y soluciones para el cuidado de la salud y el bienestar
+                de nuestros clientes.
+            </p>
+
+            <a href="#contenido" class="boton">
+                Conoce nuestro contenido
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- NOSOTROS -->
+
+    <section id="nosotros">
+
+        <h2>Nosotros</h2>
+
+        <p class="subtitulo">
+            Una farmacia enfocada en brindar atención responsable,
+            cercana y confiable a la comunidad.
+        </p>
+
+        <div class="nosotros-grid">
+
+            <img
+                src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=900&q=80"
+                alt="Productos de farmacia">
+
+            <div class="texto-nosotros">
+
+                <p>
+                    Somos una farmacia dedicada a brindar atención
+                    responsable y cercana a nuestros clientes.
+                    Contamos con productos de salud, higiene y
+                    cuidado personal.
+                </p>
+
+                <p>
+                    Nuestro objetivo es ofrecer un servicio confiable,
+                    amable y de calidad, ayudando a nuestros clientes
+                    a encontrar los productos que necesitan.
+                </p>
+
+                <p>
+                    La información presentada en este sitio tiene un
+                    propósito informativo y no reemplaza la orientación
+                    de un profesional de la salud.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTENIDO NUEVO -->
+
+    <section id="contenido" class="contenido-principal">
+
+        <h2>Contenido de Salud Vida</h2>
+
+        <p class="subtitulo">
+            Conoce las principales categorías de productos y contenidos
+            que forman parte de nuestra farmacia.
+        </p>
+
+
+        <div class="contenido-grid">
+
+
+            <!-- TARJETA 1 -->
+
+            <article class="contenido-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=800&q=80"
+                    alt="Medicamentos">
+
+                <div class="contenido-card-body">
+
+                    <div class="icono">
+                        <i class="fa-solid fa-pills"></i>
+                    </div>
+
+                    <h3>Productos farmacéuticos</h3>
+
+                    <p>
+                        Información sobre productos destinados al
+                        cuidado de la salud y medicamentos disponibles
+                        según las necesidades de los clientes.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- TARJETA 2 -->
+
+            <article class="contenido-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80"
+                    alt="Cuidado personal">
+
+                <div class="contenido-card-body">
+
+                    <div class="icono">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
+
+                    <h3>Cuidado personal</h3>
+
+                    <p>
+                        Productos de higiene y cuidado personal
+                        para diferentes necesidades de la familia.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- TARJETA 3 -->
+
+            <article class="contenido-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
+                    alt="Profesional de salud">
+
+                <div class="contenido-card-body">
+
+                    <div class="icono">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+
+                    <h3>Orientación responsable</h3>
+
+                    <p>
+                        Brindamos información general sobre nuestros
+                        productos y promovemos el uso responsable
+                        de los servicios relacionados con la salud.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- TARJETA 4 -->
+
+            <article class="contenido-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80"
+                    alt="Bienestar">
+
+                <div class="contenido-card-body">
+
+                    <div class="icono">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+
+                    <h3>Bienestar y prevención</h3>
+
+                    <p>
+                        Espacio informativo para promover hábitos
+                        de cuidado y prevención en la vida cotidiana.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- TARJETA 5 -->
+
+            <article class="contenido-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=80"
+                    alt="Organización de medicamentos">
+
+                <div class="contenido-card-body">
+
+                    <div class="icono">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+
+                    <h3>Organización de productos</h3>
+
+                    <p>
+                        Presentación organizada de las categorías
+                        para facilitar la consulta de los productos
+                        de la farmacia.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- TARJETA 6 -->
+
+            <article class="contenido-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1580281658628-0d6f7a7e6c50?auto=format&fit=crop&w=800&q=80"
+                    alt="Atención al cliente">
+
+                <div class="contenido-card-body">
+
+                    <div class="icono">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <h3>Atención al cliente</h3>
+
+                    <p>
+                        Un espacio pensado para facilitar la comunicación
+                        y orientar al cliente hacia los productos y
+                        servicios disponibles.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- ELEMENTOS DESTACADOS -->
+
+        <div class="destacados">
+
+
+            <div class="dato">
+
+                <i class="fa-solid fa-shield-heart"></i>
+
+                <h3>Confianza</h3>
+
+                <p>
+                    Atención responsable y cercana.
+                </p>
+
+            </div>
+
+
+            <div class="dato">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <h3>Organización</h3>
+
+                <p>
+                    Contenido distribuido por categorías.
+                </p>
+
+            </div>
+
+
+            <div class="dato">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <h3>Información</h3>
+
+                <p>
+                    Contenido general sobre salud y productos.
+                </p>
+
+            </div>
+
+
+            <div class="dato">
+
+                <i class="fa-solid fa-people-group"></i>
+
+                <h3>Comunidad</h3>
+
+                <p>
+                    Enfoque en las necesidades de nuestros clientes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICIOS -->
+
+    <section id="servicios">
+
+        <h2>Servicios</h2>
+
+        <p class="subtitulo">
+            Servicios relacionados con la atención y el cuidado
+            de nuestros clientes.
+        </p>
+
+
+        <div class="servicios">
+
+
+            <div class="servicio">
+
+                <i class="fa-solid fa-capsules"></i>
+
+                <h3>Venta de medicamentos</h3>
+
+                <p>
+                    Contamos con diferentes productos farmacéuticos
+                    para el cuidado de la salud.
+                </p>
+
+            </div>
+
+
+            <div class="servicio">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <h3>Orientación</h3>
+
+                <p>
+                    Brindamos información general sobre nuestros
+                    productos y servicios.
+                </p>
+
+            </div>
+
+
+            <div class="servicio">
+
+                <i class="fa-solid fa-pump-soap"></i>
+
+                <h3>Cuidado personal</h3>
+
+                <p>
+                    Productos de higiene y cuidado personal
+                    para toda la familia.
+                </p>
+
+            </div>
+
+
+            <div class="servicio">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <h3>Bienestar</h3>
+
+                <p>
+                    Productos y contenidos orientados al cuidado
+                    y bienestar de nuestros clientes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TIPO EMPRESARIAL -->
+
+    <section id="empresa">
+
+        <h2>Tipo Empresarial</h2>
+
+        <div class="empresa">
+
+            <p>
+                <strong>Nombre:</strong>
+                Farmacia Salud Vida
+            </p>
+
+            <p>
+                <strong>Tipo de empresa:</strong>
+                Empresa comercial
+            </p>
+
+            <p>
+                <strong>Sector:</strong>
+                Salud y comercio farmacéutico
+            </p>
+
+            <p>
+                <strong>Actividad económica:</strong>
+                Comercialización de productos farmacéuticos,
+                productos de higiene y cuidado personal.
+            </p>
+
+            <p>
+                <strong>Tamaño:</strong>
+                Pequeña empresa
+            </p>
+
+            <p>
+                <strong>Objetivo:</strong>
+                Ofrecer productos y servicios relacionados con
+                el cuidado de la salud de la comunidad.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+
+    <section id="contacto">
+
+        <h2>Contacto</h2>
+
+        <div class="contacto">
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                <strong>Teléfono:</strong>
+                300 123 4567
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <strong>Correo:</strong>
+                contacto@saludvida.com
+            </p>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                <strong>Dirección:</strong>
+                Calle Principal #10-20
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock"></i>
+                <strong>Horario:</strong>
+                Lunes a sábado, 8:00 AM - 8:00 PM
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PIE DE PAGINA -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Farmacia Salud Vida -
+            Todos los derechos reservados
+        </p>
+
+        <div class="footer-icons">
+
+            <i class="fa-solid fa-house-medical"></i>
+
+            <i class="fa-solid fa-pills"></i>
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
+```
+
